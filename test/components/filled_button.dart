@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_components/components/components.dart';
-import '../app.dart';
+import './app.dart';
 
-void main() {
+testFilledButton() {
   testWidgets('Check button in normal state', (WidgetTester tester) async {
     await tester.pumpWidget(
       App(

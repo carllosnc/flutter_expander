@@ -3,7 +3,7 @@ import 'package:flutter_components/components/components.dart';
 import 'package:flutter_test/flutter_test.dart';
 import './app.dart';
 
-void main() {
+testDialog() {
   testWidgets('Check dialog', (WidgetTester tester) async {
     await tester.pumpWidget(App(
       children: [
