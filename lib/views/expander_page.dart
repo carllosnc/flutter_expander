@@ -17,7 +17,7 @@ class _ExpanderPageState extends State<ExpanderPage> {
       ),
       body: const SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(10),
           child: Column(children: [
             ExpansionCard(
               title: 'Lorem Ipsum is simply',
