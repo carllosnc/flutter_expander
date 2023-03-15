@@ -1,5 +1,5 @@
-export './button/filled_button.dart';
-export './button/outlined_button.dart';
+export './filled_button.dart';
+export './outlined_button.dart';
 export './card.dart';
 export './dialog.dart';
 export './snackbar.dart';
