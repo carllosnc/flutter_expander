@@ -4,12 +4,14 @@ class TimePicker extends StatefulWidget {
   final String? label;
   final String? hint;
   final Function(TimeOfDay) onChanged;
+  final String? Function(String?)? validator;
 
   const TimePicker({
     super.key,
     this.label,
     this.hint,
     required this.onChanged,
+    this.validator,
   });
 
   @override
@@ -25,6 +27,7 @@ class _TimePickerState extends State<TimePicker> {
     return TextFormField(
       controller: inputController,
       readOnly: true,
+      validator: widget.validator,
       onTap: () {
         showTimePicker(
           context: context,

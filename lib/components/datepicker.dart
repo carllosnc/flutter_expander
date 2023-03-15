@@ -5,12 +5,14 @@ class AppDatePicker extends StatefulWidget {
   final String? label;
   final String? hint;
   final Function(DateTime) onChanged;
+  final String? Function(String?)? validator;
 
   const AppDatePicker({
     super.key,
     this.label,
     this.hint,
     required this.onChanged,
+    this.validator,
   });
 
   @override
@@ -57,12 +59,7 @@ class _AppDatePickerState extends State<AppDatePicker> {
         ),
       ),
       keyboardType: TextInputType.datetime,
-      validator: (String? value) {
-        if (value == null || value.isEmpty) {
-          return 'Please enter a date';
-        }
-        return null;
-      },
+      validator: widget.validator,
     );
   }
 }

@@ -24,7 +24,7 @@ class _AppSelectState extends State<AppSelect> {
   @override
   Widget build(BuildContext context) {
     var outlineStyle = InputDecoration(
-      contentPadding: const EdgeInsets.fromLTRB(15, 15, 15, 15),
+      contentPadding: const EdgeInsets.all(15),
       border: const OutlineInputBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(10),
