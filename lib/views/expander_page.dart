@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '/components/components.dart';
 
-class ExpansionCardPage extends StatefulWidget {
-  const ExpansionCardPage({super.key});
+class ExpanderPage extends StatefulWidget {
+  const ExpanderPage({super.key});
 
   @override
-  State<ExpansionCardPage> createState() => _ExpansionCardPageState();
+  State<ExpanderPage> createState() => _ExpanderPageState();
 }
 
-class _ExpansionCardPageState extends State<ExpansionCardPage> {
+class _ExpanderPageState extends State<ExpanderPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +32,8 @@ class _ExpansionCardPageState extends State<ExpansionCardPage> {
             ),
             SizedBox(height: 10),
             ExpansionCard(
-              title: 'Lorem Ipsum is simply the printing',
+              title:
+                  'Lorem Ipsum is simply the printing software like Aldus PageMaker including versions',
               children: [
                 Padding(
                   padding: EdgeInsets.all(15),

@@ -92,7 +92,7 @@ class _ExpansionCardState extends State<ExpansionCard>
                     Flexible(
                       child: Text(
                         widget.title,
-                        overflow: TextOverflow.ellipsis,
+                        overflow: TextOverflow.visible,
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium
@@ -117,7 +117,7 @@ class _ExpansionCardState extends State<ExpansionCard>
               key: contentKey,
               children: widget.children,
             ),
-          if(_loaded)
+          if (_loaded)
             AnimatedContainer(
               curve: _curve,
               duration: const Duration(milliseconds: 300),
