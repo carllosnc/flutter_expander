@@ -3,6 +3,7 @@ import './filled_button.dart';
 import './snackbar.dart';
 import './card.dart';
 import './datepicker.dart';
+import './timepicker.dart';
 
 void main() {
   testDialog();
@@ -10,4 +11,5 @@ void main() {
   testSnackBar();
   testCard();
   testDatepicker();
+  testTimepicker();
 }
