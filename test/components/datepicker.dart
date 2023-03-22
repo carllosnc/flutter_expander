@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_components/components/datepicker.dart';
+import 'package:flutter_components/components/filled_button.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'app.dart';
@@ -43,6 +44,15 @@ class _DatepickerMockState extends State<DatepickerMock> {
           Text('day $day'),
           Text('month $month'),
           Text('year $year'),
+          //submit button
+          AppFilledButton(
+            label: 'Submit',
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                //submit action
+              }
+            },
+          ),
         ],
       ),
     );
@@ -50,6 +60,21 @@ class _DatepickerMockState extends State<DatepickerMock> {
 }
 
 void testDatepicker() {
+  testWidgets('Datepicker error message', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const App(
+        children: [
+          DatepickerMock(),
+        ],
+      ),
+    );
+
+    await tester.tap(find.text('Submit'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Please select a date'), findsOneWidget);
+  });
+
   testWidgets('Datepicker widget', (WidgetTester tester) async {
     var day = DateTime.now().day.toString();
     var month = DateTime.now().month.toString();
