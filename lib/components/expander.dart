@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ExpansionCard extends StatefulWidget {
+class AppExpander extends StatefulWidget {
   final List<Widget> children;
   final double borderRadius;
   final Color? backgroundColor;
   final Color? titleColor;
   final String title;
 
-  const ExpansionCard({
+  const AppExpander({
     super.key,
     required this.children,
     this.borderRadius = 10,
@@ -17,17 +17,17 @@ class ExpansionCard extends StatefulWidget {
   });
 
   @override
-  State<ExpansionCard> createState() => _ExpansionCardState();
+  State<AppExpander> createState() => _AppExpanderState();
 }
 
-class _ExpansionCardState extends State<ExpansionCard>
+class _AppExpanderState extends State<AppExpander>
     with SingleTickerProviderStateMixin {
   final Curve _curve = Curves.fastOutSlowIn;
+  final GlobalKey _contentKey = GlobalKey();
 
   double _height = 0;
   double? _expandedHeight = 0;
   bool _isOpen = false;
-  GlobalKey contentKey = GlobalKey();
   bool _loaded = false;
   AnimationController? _animationController;
 
@@ -39,7 +39,7 @@ class _ExpansionCardState extends State<ExpansionCard>
     );
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _expandedHeight = contentKey.currentContext?.size?.height;
+      _expandedHeight = _contentKey.currentContext?.size?.height;
 
       setState(() {
         _height = 0;
@@ -114,7 +114,7 @@ class _ExpansionCardState extends State<ExpansionCard>
           ),
           if (!_loaded)
             Wrap(
-              key: contentKey,
+              key: _contentKey,
               children: widget.children,
             ),
           if (_loaded)

@@ -19,7 +19,7 @@ class _ExpanderPageState extends State<ExpanderPage> {
         child: Padding(
           padding: EdgeInsets.all(10),
           child: Column(children: [
-            ExpansionCard(
+            AppExpander(
               title: 'Lorem Ipsum is simply',
               children: [
                 Padding(
@@ -31,7 +31,7 @@ class _ExpanderPageState extends State<ExpanderPage> {
               ],
             ),
             SizedBox(height: 10),
-            ExpansionCard(
+            AppExpander(
               title:
                   'Lorem Ipsum is simply the printing software like Aldus PageMaker including versions',
               children: [
@@ -44,7 +44,7 @@ class _ExpanderPageState extends State<ExpanderPage> {
               ],
             ),
             SizedBox(height: 10),
-            ExpansionCard(
+            AppExpander(
               title: 'Lorem Ipsum is',
               children: [
                 Padding(

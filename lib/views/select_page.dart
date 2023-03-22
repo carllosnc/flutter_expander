@@ -54,7 +54,7 @@ class _SelectPageState extends State<SelectPage> {
               ),
               const SizedBox(height: 10),
               AppFilledButton(
-                label: 'Check validation',
+                label: 'Submit',
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     debugPrint('Validated');
