@@ -25,7 +25,7 @@ class _TimepickerPageState extends State<TimepickerPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TimePicker(
+                AppTimePicker(
                   validator: (time) {
                     if (time == null || time.isEmpty) {
                       return 'Please select a time';

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class TimePicker extends StatefulWidget {
+class AppTimePicker extends StatefulWidget {
   final String? label;
   final String? hint;
   final Function(TimeOfDay) onChanged;
   final String? Function(String?)? validator;
 
-  const TimePicker({
+  const AppTimePicker({
     super.key,
     this.label,
     this.hint,
@@ -15,10 +15,10 @@ class TimePicker extends StatefulWidget {
   });
 
   @override
-  State<TimePicker> createState() => _TimePickerState();
+  State<AppTimePicker> createState() => _AppTimePickerState();
 }
 
-class _TimePickerState extends State<TimePicker> {
+class _AppTimePickerState extends State<AppTimePicker> {
   final inputController = TextEditingController();
   TimeOfDay initialTime = TimeOfDay.now();
 

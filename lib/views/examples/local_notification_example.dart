@@ -25,7 +25,7 @@ class _TimepickerPageState extends State<TimepickerPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TimePicker(
+              AppTimePicker(
                 label: 'Time',
                 hint: 'Select time',
                 onChanged: (TimeOfDay value) {
