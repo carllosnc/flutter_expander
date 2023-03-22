@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_components/components/timepicker.dart';
+import 'package:flutter_components/components/components.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'app.dart';
 
@@ -32,21 +32,44 @@ class _TimepickerMockState extends State<TimepickerMock> {
               return null;
             },
             onChanged: (TimeOfDay time) {
-              hour = time.hour;
-              minute = time.minute;
-              setState(() {});
+              setState(() {
+                hour = time.hour;
+                minute = time.minute;
+              });
             },
           ),
           Text('hour $hour'),
           Text('minute $minute'),
+          AppFilledButton(
+            label: 'Submit',
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                //submit action
+              }
+            },
+          ),
         ],
       ),
     );
   }
 }
 
-//test TimerPickerMock
 void testTimepicker() {
+  testWidgets('Timepicker error message', (WidgetTester tester) async {
+    await tester.pumpWidget(
+      const App(
+        children: [
+          TimepickerMock(),
+        ],
+      ),
+    );
+
+    await tester.tap(find.text('Submit'), warnIfMissed: false);
+    await tester.pumpAndSettle();
+
+    expect(find.text('Please select a time'), findsOneWidget);
+  });
+
   testWidgets('Timepicker widget', (WidgetTester tester) async {
     final hour = TimeOfDay.now().hour;
     final minute = TimeOfDay.now().minute;
