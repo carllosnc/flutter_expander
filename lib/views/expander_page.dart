@@ -15,10 +15,10 @@ class _ExpanderPageState extends State<ExpanderPage> {
       appBar: AppBar(
         title: const Text('Expansion Card'),
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(10),
-          child: Column(children: [
+          padding: const EdgeInsets.all(10),
+          child: Column(children: const [
             AppExpander(
               title: 'Lorem Ipsum is simply',
               children: [

@@ -38,9 +38,9 @@ class _ButtonPageState extends State<ButtonPage> {
                 ],
               ),
               const SizedBox(height: 16),
-              const Wrap(
+              Wrap(
                 spacing: 10,
-                children: [
+                children: const [
                   AppFilledButton(
                     label: 'Loading...',
                     loading: true,
@@ -68,9 +68,9 @@ class _ButtonPageState extends State<ButtonPage> {
                 ],
               ),
               const SizedBox(height: 16),
-              const Wrap(
+              Wrap(
                 spacing: 10,
-                children: [
+                children: const [
                   AppFilledButton(
                     label: 'Disabled',
                     onPressed: null,
