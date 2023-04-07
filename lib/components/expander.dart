@@ -96,7 +96,8 @@ class _AppExpanderState extends State<AppExpander>
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium
-                            ?.copyWith(color: titleColor),
+                            ?.copyWith(
+                                color: titleColor, fontWeight: FontWeight.bold),
                       ),
                     ),
                     RotationTransition(

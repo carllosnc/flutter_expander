@@ -52,14 +52,14 @@ class _ButtonPageState extends State<ButtonPage> {
                 ],
               ),
               const SizedBox(height: 16),
-              Wrap(
-                spacing: 10,
+              Column(
                 children: [
                   AppFilledButton(
                     onPressed: () {},
                     label: 'Full width',
                     fullWidth: true,
                   ),
+                  const SizedBox(height: 10),
                   AppOutlinedButton(
                     onPressed: () {},
                     label: 'Full width',
