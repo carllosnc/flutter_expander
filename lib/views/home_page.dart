@@ -67,9 +67,9 @@ class _HomePageState extends State<HomePage> {
           ),
           const Divider(height: 1),
           ListTile(
-            title: const Text('Expansion Card'),
+            title: const Text('Expander'),
             onTap: () {
-              context.router.pushNamed('/expansion-card');
+              context.router.pushNamed('/expander');
             },
           ),
         ],

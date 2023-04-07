@@ -28,13 +28,7 @@ class AppRouter extends _i2.RootStackRouter {
         child: const _i1.HomePage(),
       );
     },
-    BottomRoute.name: (routeData) {
-      return _i2.MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const _i1.ButtonPage(),
-      );
-    },
-    AppButtonRoute.name: (routeData) {
+    ButtonRoute.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i1.ButtonPage(),
@@ -76,7 +70,7 @@ class AppRouter extends _i2.RootStackRouter {
         child: const _i1.TimepickerPage(),
       );
     },
-    ExpansionCardRoute.name: (routeData) {
+    ExpanderRoute.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
         routeData: routeData,
         child: const _i1.ExpanderPage(),
@@ -91,12 +85,8 @@ class AppRouter extends _i2.RootStackRouter {
           path: '/',
         ),
         _i2.RouteConfig(
-          BottomRoute.name,
+          ButtonRoute.name,
           path: '/buttons',
-        ),
-        _i2.RouteConfig(
-          AppButtonRoute.name,
-          path: '/custom-buttons',
         ),
         _i2.RouteConfig(
           CardsRoute.name,
@@ -123,8 +113,8 @@ class AppRouter extends _i2.RootStackRouter {
           path: '/timepicker',
         ),
         _i2.RouteConfig(
-          ExpansionCardRoute.name,
-          path: '/expansion-card',
+          ExpanderRoute.name,
+          path: '/expander',
         ),
       ];
 }
@@ -143,26 +133,14 @@ class HomeRoute extends _i2.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i1.ButtonPage]
-class BottomRoute extends _i2.PageRouteInfo<void> {
-  const BottomRoute()
+class ButtonRoute extends _i2.PageRouteInfo<void> {
+  const ButtonRoute()
       : super(
-          BottomRoute.name,
+          ButtonRoute.name,
           path: '/buttons',
         );
 
-  static const String name = 'BottomRoute';
-}
-
-/// generated route for
-/// [_i1.ButtonPage]
-class AppButtonRoute extends _i2.PageRouteInfo<void> {
-  const AppButtonRoute()
-      : super(
-          AppButtonRoute.name,
-          path: '/custom-buttons',
-        );
-
-  static const String name = 'AppButtonRoute';
+  static const String name = 'ButtonRoute';
 }
 
 /// generated route for
@@ -239,12 +217,12 @@ class TimepickerRoute extends _i2.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i1.ExpanderPage]
-class ExpansionCardRoute extends _i2.PageRouteInfo<void> {
-  const ExpansionCardRoute()
+class ExpanderRoute extends _i2.PageRouteInfo<void> {
+  const ExpanderRoute()
       : super(
-          ExpansionCardRoute.name,
-          path: '/expansion-card',
+          ExpanderRoute.name,
+          path: '/expander',
         );
 
-  static const String name = 'ExpansionCardRoute';
+  static const String name = 'ExpanderRoute';
 }

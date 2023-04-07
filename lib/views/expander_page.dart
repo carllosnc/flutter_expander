@@ -13,7 +13,7 @@ class _ExpanderPageState extends State<ExpanderPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Expansion Card'),
+        title: const Text('Expander'),
       ),
       body: SingleChildScrollView(
         child: Padding(
