@@ -5,7 +5,6 @@ Some useful material components.
 <details>
 <summary>✅ Filled Button</summary>
 
-**Example**
 ```dart
 AppFilledButton(
   onPressed: () {},
@@ -24,6 +23,8 @@ AppFilledButton(
 | loading       | bool          | null    | no       |
 
 </details>
+
+---
 
 Build runner
 
