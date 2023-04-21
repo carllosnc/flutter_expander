@@ -1,15 +1,29 @@
 # Flutter components
 
-Some useful flutter components
+Some useful material components.
 
-- ✅ Button
-- ✅ Card
-- ✅ Datepicker
-- ✅ Dialog
-- ✅ Expansion Card
-- ✅ Select
-- ✅ Snackbar
-- ✅ Timepicker
+<details>
+<summary>✅ Filled Button</summary>
+
+**Example**
+```dart
+AppFilledButton(
+  onPressed: () {},
+  label: 'Button',
+  loading: false,
+),
+```
+
+| Prop          | Type          | default | required |
+| ------------- | ------------- | ------- | -------- |
+| onPressed     | VoidCallback? | null    | no       |
+| onLongPressed | VoidCallback? | null    | no       |
+| label         | string        |         | yes      |
+| fullWidth     | bool          | null    | no       |
+| fullWidth     | bool          | null    | no       |
+| loading       | bool          | null    | no       |
+
+</details>
 
 Build runner
 
