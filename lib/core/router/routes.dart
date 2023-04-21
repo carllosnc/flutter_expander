@@ -6,7 +6,6 @@ import '/views/views.dart';
   routes: <AutoRoute>[
     AutoRoute(page: HomePage, initial: true, path: '/'),
     AutoRoute(page: ButtonPage, path: '/buttons'),
-    AutoRoute(page: CardsPage, path: '/cards'),
     AutoRoute(page: DialogPage, path: '/dialog'),
     AutoRoute(page: SnackbarPage, path: '/snackbar'),
     AutoRoute(page: SelectPage, path: '/select'),

@@ -34,12 +34,6 @@ class AppRouter extends _i2.RootStackRouter {
         child: const _i1.ButtonPage(),
       );
     },
-    CardsRoute.name: (routeData) {
-      return _i2.MaterialPageX<dynamic>(
-        routeData: routeData,
-        child: const _i1.CardsPage(),
-      );
-    },
     DialogRoute.name: (routeData) {
       return _i2.MaterialPageX<dynamic>(
         routeData: routeData,
