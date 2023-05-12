@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.flutter.firestore.flutter_components">
-    <application
+    package="com.flutter.expander">
+   <application
         android:label="flutter_components"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">

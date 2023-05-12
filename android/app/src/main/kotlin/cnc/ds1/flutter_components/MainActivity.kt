@@ -1,4 +1,4 @@
-package com.flutter.firestore.flutter_components
+package com.flutter.expander
 
 import io.flutter.embedding.android.FlutterActivity
 
