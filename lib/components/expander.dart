@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AppExpander extends StatefulWidget {
+class Expander extends StatefulWidget {
   final List<Widget> children;
   final double borderRadius;
   final Color? backgroundColor;
   final Color? titleColor;
   final String title;
 
-  const AppExpander({
+  const Expander({
     super.key,
     required this.children,
     this.borderRadius = 10,
@@ -17,10 +17,10 @@ class AppExpander extends StatefulWidget {
   });
 
   @override
-  State<AppExpander> createState() => _AppExpanderState();
+  State<Expander> createState() => _ExpanderState();
 }
 
-class _AppExpanderState extends State<AppExpander>
+class _ExpanderState extends State<Expander>
     with SingleTickerProviderStateMixin {
   final Curve _curve = Curves.fastOutSlowIn;
   final GlobalKey _contentKey = GlobalKey();
@@ -69,9 +69,10 @@ class _AppExpanderState extends State<AppExpander>
     var backgroundColor =
         widget.backgroundColor ?? Theme.of(context).colorScheme.surfaceVariant;
     var titleColor =
-        widget.titleColor ?? Theme.of(context).colorScheme.onSurfaceVariant;
+        widget.titleColor ?? Theme.of(context).colorScheme.onBackground;
 
     return Container(
+      key: const Key('expander_container'),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(widget.borderRadius)),
@@ -82,6 +83,7 @@ class _AppExpanderState extends State<AppExpander>
           Material(
             color: backgroundColor,
             child: InkWell(
+              key: const Key('expander_header'),
               onTap: toggleExpansion,
               child: Container(
                 padding: const EdgeInsets.all(15),
@@ -95,9 +97,8 @@ class _AppExpanderState extends State<AppExpander>
                         overflow: TextOverflow.visible,
                         style: Theme.of(context)
                             .textTheme
-                            .titleMedium
-                            ?.copyWith(
-                                color: titleColor, fontWeight: FontWeight.bold),
+                            .titleSmall
+                            ?.copyWith(color: titleColor),
                       ),
                     ),
                     RotationTransition(
@@ -120,6 +121,7 @@ class _AppExpanderState extends State<AppExpander>
             ),
           if (_loaded)
             AnimatedContainer(
+              key: const Key('expander_content'),
               curve: _curve,
               duration: const Duration(milliseconds: 300),
               clipBehavior: Clip.hardEdge,
