@@ -2,33 +2,24 @@ import 'package:flutter/material.dart';
 
 class Expander extends StatefulWidget {
   final List<Widget> children;
-  final double borderRadius;
-  final Color? backgroundColor;
-  final Color? titleColor;
   final String title;
 
   const Expander({
     super.key,
     required this.children,
-    this.borderRadius = 10,
-    this.backgroundColor,
-    this.titleColor,
-    this.title = 'Title',
+    required this.title,
   });
 
   @override
   State<Expander> createState() => _ExpanderState();
 }
 
-class _ExpanderState extends State<Expander>
-    with SingleTickerProviderStateMixin {
-  final Curve _curve = Curves.fastOutSlowIn;
+class _ExpanderState extends State<Expander> with TickerProviderStateMixin {
   final GlobalKey _contentKey = GlobalKey();
-
   double _height = 0;
   double? _expandedHeight = 0;
   bool _isOpen = false;
-  bool _loaded = false;
+  bool _isLoaded = false;
   AnimationController? _animationController;
 
   @override
@@ -43,7 +34,7 @@ class _ExpanderState extends State<Expander>
 
       setState(() {
         _height = 0;
-        _loaded = true;
+        _isLoaded = true;
       });
     });
 
@@ -66,16 +57,14 @@ class _ExpanderState extends State<Expander>
 
   @override
   Widget build(BuildContext context) {
-    var backgroundColor =
-        widget.backgroundColor ?? Theme.of(context).colorScheme.surfaceVariant;
-    var titleColor =
-        widget.titleColor ?? Theme.of(context).colorScheme.onBackground;
+    var backgroundColor = Theme.of(context).colorScheme.surfaceVariant;
+    var titleColor = Theme.of(context).colorScheme.onBackground;
 
     return Container(
       key: const Key('expander_container'),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(widget.borderRadius)),
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
         color: backgroundColor,
       ),
       child: Wrap(
@@ -106,7 +95,7 @@ class _ExpanderState extends State<Expander>
                           .animate(_animationController!),
                       child: Icon(
                         Icons.keyboard_arrow_right,
-                        color: widget.titleColor,
+                        color: titleColor,
                       ),
                     ),
                   ],
@@ -114,15 +103,15 @@ class _ExpanderState extends State<Expander>
               ),
             ),
           ),
-          if (!_loaded)
+          if (!_isLoaded)
             Wrap(
               key: _contentKey,
               children: widget.children,
             ),
-          if (_loaded)
+          if (_isLoaded)
             AnimatedContainer(
               key: const Key('expander_content'),
-              curve: _curve,
+              curve: Curves.fastOutSlowIn,
               duration: const Duration(milliseconds: 300),
               clipBehavior: Clip.hardEdge,
               decoration: const BoxDecoration(),
